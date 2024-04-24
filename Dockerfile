@@ -1,7 +1,8 @@
-FROM python:3.8.10-buster
+# FROM python:3.8.10-buster
+FROM tensorflow/tensorflow:2.12.0-gpu
 USER root
 
-COPY ./sources.list /etc/apt/sources.list
+# COPY ./sources.list /etc/apt/sources.list
 RUN apt update && \
     apt install -y libgl1-mesa-glx libglib2.0-0 libsm6 libxrender1 libfontconfig1 && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/log/*
